@@ -1,51 +1,66 @@
-# Serper MCP Server
+<div align="center">
 
-[![PyPI version](https://badge.fury.io/py/serper-mcp-server.svg)](https://badge.fury.io/py/serper-mcp-server)
-[![PyPI Downloads](https://static.pepy.tech/badge/serper-mcp-server)](https://pepy.tech/project/serper-mcp-server)
-[![Monthly Downloads](https://static.pepy.tech/badge/serper-mcp-server/month)](https://pepy.tech/project/serper-mcp-server)
-[![Python Version](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+# 🔍 Serper MCP Server
 
-A Model Context Protocol server that provides **Google Search via Serper**. This server enables LLMs to get search result information from Google.
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![PyPI](https://img.shields.io/pypi/v/serper-mcp-server.svg)](https://pypi.org/project/serper-mcp-server/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![MCP](https://img.shields.io/badge/MCP-Compatible-green.svg)](https://modelcontextprotocol.io)
 
-Maintained by [The-Thought-Magician](https://chiranjeet.app) — source code lives at [github.com/The-Thought-Magician/serpermcp](https://github.com/The-Thought-Magician/serpermcp).
+**A powerful Model Context Protocol server that brings Google Search capabilities to your LLMs** 🚀
 
-## Repository
+*Maintained by [The-Thought-Magician](https://chiranjeet.app)*
 
-- GitHub (HTTPS): https://github.com/The-Thought-Magician/serpermcp
-- GitHub (SSH): `git@github.com:The-Thought-Magician/serpermcp.git`
+[Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Tools](#-available-tools) • [Debugging](#-debugging)
 
-## Available Tools
+---
 
-- `google_search` - Set [all the parameters](src/serper_mcp_server/schemas.py#L15)
-- `google_search_images` - Set [all the parameters](src/serper_mcp_server/schemas.py#L15)
-- `google_search_videos` - Set [all the parameters](src/serper_mcp_server/schemas.py#L15)
-- `google_search_places` - Set [all the parameters](src/serper_mcp_server/schemas.py#L20)
-- `google_search_maps` - Set [all the parameters](src/serper_mcp_server/schemas.py#L24)
-- `google_search_reviews` - Set [all the parameters](src/serper_mcp_server/schemas.py#L34)
-- `google_search_news` - Set [all the parameters](src/serper_mcp_server/schemas.py#L15)
-- `google_search_shopping` - Set [all the parameters](src/serper_mcp_server/schemas.py#L45)
-- `google_search_lens` - Set [all the parameters](src/serper_mcp_server/schemas.py#L50)
-- `google_search_scholar` - Set [all the parameters](src/serper_mcp_server/schemas.py#L20)
-- `google_search_parents` - Set [all the parameters](src/serper_mcp_server/schemas.py#L56)
-- `google_search_autocomplete` - Set [all the parameters](src/serper_mcp_server/schemas.py#L20)
-- `webpage_scrape` - Set [all the parameters](src/serper_mcp_server/schemas.py#L62)
+</div>
+
+## 📦 Repository
+
+```bash
+# HTTPS
+git clone https://github.com/The-Thought-Magician/serpermcp.git
+
+# SSH
+git clone git@github.com:The-Thought-Magician/serpermcp.git
+```
+
+## 🛠️ Available Tools
+
+| Tool | Description | Parameters |
+|------|-------------|------------|
+| 🔎 `google_search` | General web search | [View Schema](src/serper_mcp_server/schemas.py#L15) |
+| 🖼️ `google_search_images` | Image search | [View Schema](src/serper_mcp_server/schemas.py#L15) |
+| 🎥 `google_search_videos` | Video search | [View Schema](src/serper_mcp_server/schemas.py#L15) |
+| 📍 `google_search_places` | Local places search | [View Schema](src/serper_mcp_server/schemas.py#L20) |
+| 🗺️ `google_search_maps` | Maps & locations | [View Schema](src/serper_mcp_server/schemas.py#L24) |
+| ⭐ `google_search_reviews` | Business reviews | [View Schema](src/serper_mcp_server/schemas.py#L34) |
+| 📰 `google_search_news` | News articles | [View Schema](src/serper_mcp_server/schemas.py#L15) |
+| 🛒 `google_search_shopping` | Product search | [View Schema](src/serper_mcp_server/schemas.py#L45) |
+| 📷 `google_search_lens` | Visual search | [View Schema](src/serper_mcp_server/schemas.py#L50) |
+| 🎓 `google_search_scholar` | Academic papers | [View Schema](src/serper_mcp_server/schemas.py#L20) |
+| 👪 `google_search_parents` | Parent-safe search | [View Schema](src/serper_mcp_server/schemas.py#L56) |
+| 💡 `google_search_autocomplete` | Search suggestions | [View Schema](src/serper_mcp_server/schemas.py#L20) |
+| 🌐 `webpage_scrape` | Scrape web content | [View Schema](src/serper_mcp_server/schemas.py#L62) |
 
 
-## Usage
+## 🚀 Installation
 
-### Installing via Smithery
+### ⚡ Quick Install via Smithery
 
-To install Serper MCP Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@the-thought-magician/serper-mcp-server):
+Install Serper MCP Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@the-thought-magician/serper-mcp-server):
 
 ```bash
 npx -y @smithery/cli install @the-thought-magician/serper-mcp-server --client claude
 ```
 
-### Using `uv` (recommended)
+### 🌟 Using `uv` (Recommended)
 
-1. Make sure you had installed [`uv`](https://docs.astral.sh/uv/) on your os system.
+> **Note:** Make sure you have [`uv`](https://docs.astral.sh/uv/) installed on your system.
 
-2. In your MCP client code configuration or **Claude** settings (file `claude_desktop_config.json`) add `serper` mcp server:
+**Step 1:** Add to your MCP client configuration or **Claude Desktop** settings (`claude_desktop_config.json`):
     ```json
     {
         "mcpServers": {
@@ -59,20 +74,25 @@ npx -y @smithery/cli install @the-thought-magician/serper-mcp-server --client cl
         }
     }
     ```
-    `uv` will download mcp server automatically using `uvx` from [pypi.org](https://pypi.org/project/serper-mcp-server/) and apply to your MCP client.
 
-### Using `pip` for project
-1. Add `serper-mcp-server` to your MCP client code `requirements.txt` file.
-    ```txt
-    serper-mcp-server
-    ```
+**Step 2:** The server will be downloaded automatically from [PyPI](https://pypi.org/project/serper-mcp-server/) using `uvx` ✨
 
-2. Install the dependencies.
-    ```shell
-    pip install -r requirements.txt
-    ```
+---
 
-3. Add the configuration for you client:
+### 📦 Using `pip` for Projects
+
+**Step 1:** Add `serper-mcp-server` to your `requirements.txt`:
+```txt
+serper-mcp-server
+```
+
+**Step 2:** Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+**Step 3:** Configure your MCP client:
     ```json
     {
         "mcpServers": {
@@ -87,17 +107,19 @@ npx -y @smithery/cli install @the-thought-magician/serper-mcp-server --client cl
     }
     ```
 
+---
 
-### Using `pip` for globally usage
+### 🌍 Global Installation with `pip`
 
-1. Make sure the `pip` or `pip3` is in your os system.
-    ```bash
-    pip install serper-mcp-server
-    # or
-    pip3 install serper-mcp-server
-    ```
+**Step 1:** Install globally:
 
-2. MCP client code configuration or **Claude** settings, add `serper` mcp server:
+```bash
+pip install serper-mcp-server
+# or
+pip3 install serper-mcp-server
+```
+
+**Step 2:** Add to your MCP client configuration or **Claude Desktop** settings:
     ```json
     {
         "mcpServers": {
@@ -112,24 +134,44 @@ npx -y @smithery/cli install @the-thought-magician/serper-mcp-server --client cl
     }
     ```
 
+---
 
-## Debugging
+## 🐛 Debugging
 
-You can use the MCP inspector to debug the server. For `uvx` installations:
+Use the MCP Inspector to debug the server:
+
+### For `uvx` installations:
 
 ```bash
 npx @modelcontextprotocol/inspector uvx serper-mcp-server
 ```
 
-Or if you've installed the package in a specific directory or are developing on it:
+### For local development:
 
 ```bash
 git clone https://github.com/The-Thought-Magician/serpermcp.git
 cd serpermcp
-npx @modelcontextprotocol/inspector uv run serper-mcp-server -e SERPER_API_KEY=<the key>
+npx @modelcontextprotocol/inspector uv run serper-mcp-server -e SERPER_API_KEY=<your_key>
 ```
 
+---
 
-## License
+## 📄 License
 
-serper-mcp-server is licensed under the MIT License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License. For more details, please see the LICENSE file in the project repository.
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+You are free to:
+- ✅ Use commercially
+- ✅ Modify
+- ✅ Distribute
+- ✅ Private use
+
+---
+
+<div align="center">
+
+**Made with ❤️ by [The-Thought-Magician](https://chiranjeet.app)**
+
+⭐ Star this repo if you find it helpful!
+
+</div>
