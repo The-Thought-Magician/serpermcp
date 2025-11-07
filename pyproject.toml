@@ -4,7 +4,7 @@ dynamic = ["version"]
 description = "A MCP server for Serper"
 keywords = ["serper", "mcp", "server", "google", "search"]
 authors = [
-    { name="Gary Meng", email="guozao.m@gmail.com" },
+    { name="The-Thought-Magician", email="chiranjeetmishra13@gmail.com" },
 ]
 readme = "README.md"
 requires-python = ">=3.11"
@@ -17,9 +17,9 @@ dependencies = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/garylab/serper-mcp-server"
-"Bug Tracker" = "https://github.com/garylab/serper-mcp-server/issues"
-"Author Blog" = "https://garymeng.com"
+"Homepage" = "https://github.com/The-Thought-Magician/serpermcp"
+"Bug Tracker" = "https://github.com/The-Thought-Magician/serpermcp/issues"
+"Author Blog" = "https://chiranjeet.app"
 
 [build-system]
 requires = ["setuptools>=61.0", "setuptools-scm"]

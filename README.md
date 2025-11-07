@@ -7,6 +7,13 @@
 
 A Model Context Protocol server that provides **Google Search via Serper**. This server enables LLMs to get search result information from Google.
 
+Maintained by [The-Thought-Magician](https://chiranjeet.app) — source code lives at [github.com/The-Thought-Magician/serpermcp](https://github.com/The-Thought-Magician/serpermcp).
+
+## Repository
+
+- GitHub (HTTPS): https://github.com/The-Thought-Magician/serpermcp
+- GitHub (SSH): `git@github.com:The-Thought-Magician/serpermcp.git`
+
 ## Available Tools
 
 - `google_search` - Set [all the parameters](src/serper_mcp_server/schemas.py#L15)
@@ -28,10 +35,10 @@ A Model Context Protocol server that provides **Google Search via Serper**. This
 
 ### Installing via Smithery
 
-To install Serper MCP Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@garylab/serper-mcp-server):
+To install Serper MCP Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@the-thought-magician/serper-mcp-server):
 
 ```bash
-npx -y @smithery/cli install @garylab/serper-mcp-server --client claude
+npx -y @smithery/cli install @the-thought-magician/serper-mcp-server --client claude
 ```
 
 ### Using `uv` (recommended)
@@ -117,8 +124,8 @@ npx @modelcontextprotocol/inspector uvx serper-mcp-server
 Or if you've installed the package in a specific directory or are developing on it:
 
 ```bash
-git clone https://github.com/garylab/serper-mcp-server.git
-cd serper-mcp-server
+git clone https://github.com/The-Thought-Magician/serpermcp.git
+cd serpermcp
 npx @modelcontextprotocol/inspector uv run serper-mcp-server -e SERPER_API_KEY=<the key>
 ```
 
